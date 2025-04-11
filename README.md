@@ -10,7 +10,7 @@
 - [📌 Project Overview](#-project-overview)
 - [🎯 Key Objectives](#-key-objectives)
 - [🧪 Technologies Used](#-technologies-used)
-- [⚙️ Features Implemented](#️-features-implemented)
+- [⚙️ Features Implemented & Observations](#️-features-implemented--observations)
 - [📚 Learning Outcomes](#-learning-outcomes)
 - [👨‍💻 Author](#-author)
 
@@ -48,14 +48,31 @@ This project delves into the practical capabilities of **large language models (
 
 ---
 
-## ⚙️ Features Implemented
+## ⚙️ Features Implemented & Observations
 
-- Custom prompts for narrative generation & analysis
-- Few-shot prompting for reasoning consistency
-- Custom Gentopia agents:
-  - **Scholar Agent** (Google Scholar + PDF summarizer)
-  - **Wellness Agent** (nutrition planner, mindfulness exercises, text-to-speech)
-- YAML-based configuration of agent workflows
+- 🧠 **Prompt Engineering Experiments**
+  - Compared OpenAI's `gpt-4o-mini` behavior under different `top-p` values (1.0, 0.5) for story generation.
+  - Found that output themes remained consistent despite sampling changes — showcasing prompt sensitivity over sampling diversity.
+
+- 🧮 **Mathematical Reasoning with GPT**
+  - Solved algebraic word problems using few-shot prompts with `gpt-4o-mini`.
+  - Achieved **100% accuracy (10/10)** on the Melanie vacuum cleaner problem when prompted creatively.
+  - Verified that **few-shot prompting with well-structured solutions greatly improved stability and reasoning quality**.
+
+- 🤖 **Vanilla LLM Agent (Gentopia)**
+  - Built a base conversational agent using `gpt-4o-mini`.
+  - Found limitations in **context carryover**, e.g., the agent failed to track previous questions like *“Who is leading the NLP group?”*.
+
+- 📚 **Scholar Agent (Tool-Augmented)**
+  - Successfully retrieved **real papers by Prof. Ziyu Yao** including:
+    - “UnifiedSKG” with 280+ citations
+    - “STAQC” and “CoaCor” with top-tier conference metadata
+  - Summarized academic PDFs via `PyPDF2` and identified papers that **cite target publications** using Google Scholar tool integration.
+
+- 🌿 **Wellness Agent**
+  - Produced a **full week high-protein vegetarian meal plan** with per-meal protein values (e.g., “Tempeh stir-fry – 25g”).
+  - Responded to personalized requests for **guided meditation**, **body scanning**, and **text-to-speech** conversion.
+  - Demonstrated multi-modal interaction potential with LLMs beyond text.
 
 ---
 
